@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Pribadi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-title">
+            <h1 class="page-title">BIODATA DIRI</h1>
+        </div>
+        
+        <div class="card">
+            <div class="content-section">
+                <h1>Hazel Septa Albani</h1>
+                <p class="subtitle">Web Developer & Designer</p>
+                
+                <div class="info-section">
+                    <h2>Informasi Pribadi</h2>
+                    <div class="info-row">
+                        <div class="info-item-compact">
+                            <span class="label">Nama</span>
+                            <span class="value">: Hazel Septa Albani</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item-compact">
+                            <span class="label">Tempat</span>
+                            <span class="value">: Indonesia</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item-compact">
+                            <span class="label">Tgl. Lahir</span>
+                            <span class="value">: 05 September 2007</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item-compact">
+                            <span class="label">Agama</span>
+                            <span class="value">: Islam</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item-compact">
+                            <span class="label">Alamat</span>
+                            <span class="value">: Jawa Tengah,50185 .Tambakaji, Kec. Ngaliyan ,Kota Semarang</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item-compact">
+                            <span class="label">Email</span>
+                            <span class="value">: hazelkeyen51@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item-compact">
+                            <span class="label">No.HP</span>
+                            <span class="value">: +62 851-6192-0586</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item-compact">
+                            <span class="label">Website</span>
+                            <span class="value">: <a href="#">www.hazelalbani.com</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Pendidikan</h2>
+                    <ul class="education-list">
+                        <li><span class="year">2013 - 2019</span> SD Negeri Tambakaji 05 Semarang</li>
+                        <li><span class="year">2019 - 2022</span> SMP Hasanuddin 6 Semarang</li>
+                        <li><span class="year">2022 - Sekarang</span> SMK Texmaco Semarang</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h2>Keahlian</h2>
+                    <ul class="skills-list">
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>React.js</li>
+                        <li>Web Design</li>
+                        <li>UI/UX Design</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="photo-section">
+                <div class="photo-wrapper">
+                    <img src="HAZEL SEPTA ALBANI.JPG" alt="Foto Profil Hazel Septa Albani" class="profile-photo" style="cursor: pointer;">
+                    <audio id="background-music" src="lokerkatakata.mp3"></audio>
+                    
+                    <!-- Audio Player Control -->
+                    <div class="audio-player">
+                        <button id="play-btn" class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        
+                        <div class="time-display">
+                            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div id="progress" class="progress"></div>
+                        </div>
+                        
+                        <button id="volume-btn" class="volume-btn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="social-media-section">
+            <h2>SOCIAL MEDIA</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/gojelcintadamai" target="_blank" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span class="label">INSTAGRAM</span>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hazelkeyen51@gmail.com" target="_blank" class="social-btn gmail">
+                    <i class="fas fa-envelope"></i>
+                    <span class="label">GMAIL</span>
+                </a>
+                <a href="https://www.youtube.com/@GojelSepta-666" target="_blank" class="social-btn youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span class="label">YOUTUBE</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const playBtn = document.getElementById('play-btn');
+        const currentTimeSpan = document.getElementById('current-time');
+        const durationSpan = document.getElementById('duration');
+        const progressBar = document.querySelector('.progress-bar');
+        const progress = document.getElementById('progress');
+        const volumeBtn = document.getElementById('volume-btn');
+
+        // Update duration saat audio loaded
+        audio.addEventListener('loadedmetadata', function() {
+            durationSpan.textContent = formatTime(audio.duration);
+        });
+
+        // Play/Pause Button
+        playBtn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+
+        // Klik foto untuk play/pause
+        document.querySelector('.profile-photo').addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+
+        // Update current time
+        audio.addEventListener('timeupdate', function() {
+            currentTimeSpan.textContent = formatTime(audio.currentTime);
+            const percent = (audio.currentTime / audio.duration) * 100;
+            progress.style.width = percent + '%';
+        });
+
+        // Progress bar click untuk jump ke waktu tertentu
+        progressBar.addEventListener('click', function(e) {
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = percent * audio.duration;
+        });
+
+        // Volume button
+        volumeBtn.addEventListener('click', function() {
+            if (audio.volume > 0) {
+                audio.volume = 0;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                audio.volume = 1;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        });
+
+        // Format waktu
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return mins + ':' + (secs < 10 ? '0' : '') + secs;
+        }
+
+        // Reset saat audio selesai
+        audio.addEventListener('ended', function() {
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+    </script>
+</body>
+</html>
